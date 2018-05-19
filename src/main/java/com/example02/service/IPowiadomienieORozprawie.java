@@ -20,8 +20,6 @@ public interface IPowiadomienieORozprawie {
 
     String SHORT_DATE_FORMAT = "dd-MM-yyyy";
 
-    int WYMAGANA_DLUGOSC_KODU_JO = 4;
-
-    Wydruk generujDokument(Sprawa aSprawa);
+    Wydruk generujWydruk(Sprawa aSprawa);
 }
 

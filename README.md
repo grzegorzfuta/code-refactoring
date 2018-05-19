@@ -45,9 +45,9 @@ A może trochę bardziej skomplikowane zdanie? Spróbuj zmienić implementację`
 
 #### Zadanie 06
 
-Spróbuj zrefaktorować metodę `DiscountCalculatorService.calculateDiscount()`. Jaki wzorce projektowe można zastosować?
+Spróbuj zrefaktorować metodę `DiscountCalculatorService.calculateDiscount()`. Jakie wzorce projektowe można zastosować?
 Czy można coś zrobić z klasami w pakiecie `com.example06.model`?
-Co moża zrobić, żeby wprowadzić całkowity rabat dla całego zamówienia klient?
+Co można zrobić, żeby wprowadzić całkowity rabat dla zamówienia klienta?
 
 #### Zadanie 07
 

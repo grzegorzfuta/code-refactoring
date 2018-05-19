@@ -26,11 +26,17 @@ nieoczekiwanych zmian w sposobie działania aplikacji. Właściwie zaplanowane t
 ### Cwiczenia 
 
 #### Zadanie 01
+
+[Przeczytaj informacje o zadaniu](src/main/java/com/example01/README.md)
+
 #### Zadanie 02
 
 Zmień implementację `PowiadomienieORozprawieService.generujDokument()` w taki sposób, aby była bardziej czytelna i ustrukturalizowana.
 
 #### Zadanie 03
+
+[Przeczytaj informacje o zadaniu](src/main/java/com/example03/README.md)
+
 #### Zadanie 04
 
 Zmień implementację metody `PersonFilterService.filterBySurname()` zamieniając pętle na strumienie i wyrażenia lambda.
@@ -43,3 +49,6 @@ Spróbuj zrefaktorować metodę `DiscountCalculatorService.calculateDiscount()`.
 Czy można coś zrobić z klasami w pakiecie `com.example06.model`?
 Co moża zrobić, żeby wprowadzić całkowity rabat dla całego zamówienia klient?
 
+#### Zadanie 07
+
+[Przeczytaj informacje o zadaniu](src/main/java/com/example07/README.md)

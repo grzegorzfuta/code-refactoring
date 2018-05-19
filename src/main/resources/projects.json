@@ -1,0 +1,39 @@
+[
+  {
+    "id": "/projects/0001",
+    "name": "A Project",
+    "startDate": {
+      "year": 2015,
+      "month": 1,
+      "day": 1
+    },
+    "endDate": {
+      "year": 2020,
+      "month": 12,
+      "day": 31
+    }
+  },
+  {
+    "id": "/projects/0002",
+    "name": "Project Euler",
+    "startDate": {
+      "year": 2017,
+      "month": 5,
+      "day": 10
+    }
+  },
+  {
+    "id": "/projects/0003",
+    "name": "Clouds",
+    "startDate": {
+      "year": 2018,
+      "month": 7,
+      "day": 1
+    },
+    "endDate": {
+      "year": 2019,
+      "month": 6,
+      "day": 30
+    }
+  }
+]

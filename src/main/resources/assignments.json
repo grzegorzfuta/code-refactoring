@@ -1,0 +1,90 @@
+[
+  {
+    "project": {
+      "id": "/projects/0002"
+    },
+    "developer": {
+      "id": "/developers/0003"
+    }
+  },
+  {
+    "project": {
+      "id": "/projects/0002"
+    },
+    "developer": {
+      "id": "/developers/0001"
+    }
+  },
+  {
+    "project": {
+      "id": "/projects/0003"
+    },
+    "developer": {
+      "id": "/developers/0003"
+    }
+  },
+  {
+    "project": {
+      "id": "/projects/0001"
+    },
+    "developer": {
+      "id": "/developers/0006"
+    }
+  },
+  {
+    "project": {
+      "id": "/projects/0001"
+    },
+    "developer": {
+      "id": "/developers/0007"
+    }
+  },
+  {
+    "project": {
+      "id": "/projects/0003"
+    },
+    "developer": {
+      "id": "/developers/0007"
+    }
+  },
+  {
+    "project": {
+      "id": "/projects/0001"
+    },
+    "developer": {
+      "id": "/developers/0008"
+    }
+  },
+  {
+    "project": {
+      "id": "/projects/0003"
+    },
+    "developer": {
+      "id": "/developers/0005"
+    }
+  },
+  {
+    "project": {
+      "id": "/projects/0002"
+    },
+    "developer": {
+      "id": "/developers/0004"
+    }
+  },
+  {
+    "project": {
+      "id": "/projects/0001"
+    },
+    "developer": {
+      "id": "/developers/0005"
+    }
+  },
+  {
+    "project": {
+      "id": "/projects/0002"
+    },
+    "developer": {
+      "id": "/developers/0002"
+    }
+  }
+]

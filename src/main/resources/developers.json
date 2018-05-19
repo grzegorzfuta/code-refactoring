@@ -1,0 +1,42 @@
+[
+  {
+    "id": "/developers/0001",
+    "name": "Jacob",
+    "team": "team-01"
+  },
+  {
+    "id": "/developers/0002",
+    "name": "Chloe",
+    "team": "team-01"
+  },
+  {
+    "id": "/developers/0003",
+    "name": "Michael",
+    "team": "team-01"
+  },
+  {
+    "id": "/developers/0004",
+    "name": "Emily",
+    "team": "team-01"
+  },
+  {
+    "id": "/developers/0005",
+    "name": "Shawn",
+    "team": "A Team"
+  },
+  {
+    "id": "/developers/0006",
+    "name": "Emma",
+    "team": "A Team"
+  },
+  {
+    "id": "/developers/0007",
+    "name": "Daniel",
+    "team": "A Team"
+  },
+  {
+    "id": "/developers/0008",
+    "name": "Jennifer",
+    "team": "A Team"
+  }
+]

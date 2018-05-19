@@ -19,17 +19,13 @@ public class PowiadomienieORozprawieGospodarczejService implements IPowiadomieni
     @Override
     public Wydruk generujWydruk(Sprawa aSprawa) {
         Wydruk pWydruk = zainicjujWydruk();
-
-        final Long aKodJednOrgLong = aSprawa.getKodJednostkiOddzialu();
-
         zainicjujDokument(aSprawa, pWydruk);
+
+        uzupelnijDaneWydruku(aSprawa, pWydruk);
 
         wydrukiCommonsService.wypelnijDaneKontaktoweStronyPozywajacej(aSprawa, pWydruk);
         wydrukiCommonsService.wypelnijDaneUrzedu(aSprawa.getKodJednostkiOddzialu(), pWydruk);
-
-        uzupelnijDaneSzczegoloweDokumentu(aSprawa, pWydruk);
-
-        wydrukiCommonsService.rejestracjaDokumentuWKancelarii(aKodJednOrgLong, aSprawa, pWydruk.getDokument());
+        wydrukiCommonsService.rejestracjaDokumentuWKancelarii(aSprawa, pWydruk.getDokument());
 
         return pWydruk;
     }
@@ -41,7 +37,7 @@ public class PowiadomienieORozprawieGospodarczejService implements IPowiadomieni
         pWydruk.getDokument().setKodJednostkiOddzialu(aSprawa.getKodJednostkiOddzialu());
     }
 
-    private void uzupelnijDaneSzczegoloweDokumentu(Sprawa aSprawa, Wydruk aWydruk) {
+    private void uzupelnijDaneWydruku(Sprawa aSprawa, Wydruk aWydruk) {
         // tutaj dodanie "zmiennych" znajdujących się na wydruku
     }
 

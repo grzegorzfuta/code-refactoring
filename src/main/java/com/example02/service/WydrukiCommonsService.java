@@ -15,13 +15,13 @@ public class WydrukiCommonsService {
     /**
      * Kancelaria to system zewnętrzny. (przenosimy do innego serwisu?)
      *
-     * @param aKodJednoski kod jednostki - może być null
      * @param aSprawa sprawa, z którą związany jest dokument
      * @param aDokument rejestrowany dokument
      */
-    public void rejestracjaDokumentuWKancelarii(final Long aKodJednoski, final Sprawa aSprawa, final Dokument aDokument) {
-        final String pKodJednOrgString = (aKodJednoski != null) ? StringUtils.padWithZeroes(aKodJednoski, WYMAGANA_DLUGOSC_KODU_JO) : null;
-        // implementation removed
+    public void rejestracjaDokumentuWKancelarii(final Sprawa aSprawa, final Dokument aDokument) {
+        final String pKodJednOrgString = (aSprawa.getKodJednostkiOddzialu() != null)
+                ? StringUtils.padWithZeroes(aSprawa.getKodJednostkiOddzialu(), WYMAGANA_DLUGOSC_KODU_JO) : null;
+        // rest of implementation
     }
 
     public void wypelnijDaneKontaktoweStronyPozywajacej(Sprawa sprawa, Wydruk wydruk) {

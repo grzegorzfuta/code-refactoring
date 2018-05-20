@@ -11,10 +11,12 @@ public class Editor {
     private EditorMode editorMode;
     private Map<EditorMode, Consumer<EditorEvent>> actions;
     private List<EditorEvent> eventHistory;
+    private boolean saveHistory;
 
     public Editor() {
         editorMode = EditorMode.DRAW_MODE;
         eventHistory = new ArrayList<>();
+        saveHistory = true;
         actions = new HashMap<>();
         actions.put(EditorMode.DRAW_MODE, new ActionDraw());
         actions.put(EditorMode.MODIFY_MODE, new ActionModify());
@@ -22,6 +24,14 @@ public class Editor {
         actions.put(EditorMode.DELETE_MODE, new ActionDelete());
         actions.put(EditorMode.JOIN_MODE, new ActionJoin());
         actions.put(EditorMode.CUT_MODE, new ActionCut());
+    }
+
+    public boolean isSaveHistory() {
+        return saveHistory;
+    }
+
+    public void setSaveHistory(boolean saveHistory) {
+        this.saveHistory = saveHistory;
     }
 
     public boolean isDrawMode() {
@@ -77,7 +87,9 @@ public class Editor {
     }
 
     public void action(EditorEvent editorEvent) {
-        eventHistory.add(editorEvent);
+        if (saveHistory) {
+            eventHistory.add(editorEvent);
+        }
 
         actions.get(editorMode).accept(editorEvent);
     }

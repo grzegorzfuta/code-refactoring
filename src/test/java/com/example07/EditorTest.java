@@ -117,4 +117,13 @@ class EditorTest {
         return new EditorEvent(new EditorObject(id1), new EditorObject(id2));
     }
 
+    @Test
+    void shouldNotHaveEventInHistory() {
+        editor.setSaveHistory(false);
+
+        editor.action(createEditorEvent(ID1, ID2));
+
+        assertTrue(editor.getEventHistory().isEmpty());
+    }
+
 }

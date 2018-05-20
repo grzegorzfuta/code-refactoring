@@ -1,3 +1,7 @@
+# Wstęp
+
+Zgodnie z obietnicą z warsztatów dołączamy możliwe przykładowe rozwiązania. Opis rozwiązań i co zostało zrobione znajdziecie na [stronach Wiki](https://github.com/grzegorzfuta/code-refactoring/wiki) oraz osobnych (dla każdego z przykładów) gałęziach.
+
 # Warsztaty refaktoringu kodu - poziom podstawowy
 
 Repozytorium zawiera kod bazy kod źródłowy do ćwiczeń z refaktoringu kodu.

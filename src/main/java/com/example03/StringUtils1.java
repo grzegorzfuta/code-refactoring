@@ -21,10 +21,10 @@ public class StringUtils1 {
             return result;
         }
 
-        if ((currentDescription.length() + addedDescription.length()) <= MAX_DESCRIPTION_LENGTH) {
+        if ((result.length() + addedDescription.length()) <= MAX_DESCRIPTION_LENGTH) {
             result += addedDescription;
         } else {
-            Integer remainingCharacters = MAX_DESCRIPTION_LENGTH - currentDescription.length();
+            Integer remainingCharacters = MAX_DESCRIPTION_LENGTH - result.length();
             result += addedDescription.substring(0, remainingCharacters);
         }
 

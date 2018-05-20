@@ -68,7 +68,7 @@ class DocumentComponentTest {
     void shouldCreateAttachmentWithType() {
         Event event = createEventWithFiles();
 
-        Attachment attachment = documentComponent.createAttachmentWithType(event, ATTACHMENT_TYPE);
+        Attachment attachment = documentComponent.createAttachment(event, ATTACHMENT_TYPE);
 
         assertNotNull(attachment);
         assertEquals(FILE_NAME, attachment.getFilename());

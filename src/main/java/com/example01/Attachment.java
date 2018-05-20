@@ -2,41 +2,32 @@ package com.example01;
 
 public class Attachment {
 
-    private String filename;
-    private String mimeType;
-    private String fileContent;
-    private AttachmentType attachmentType;
+    private final String filename;
+    private final String mimeType;
+    private final String fileContent;
+    private final AttachmentType attachmentType;
+
+    public Attachment(String filename, String mimeType, String fileContent, AttachmentType attachmentType) {
+        this.filename = filename;
+        this.mimeType = mimeType;
+        this.fileContent = fileContent;
+        this.attachmentType = attachmentType;
+    }
 
     public String getFilename() {
         return filename;
-    }
-
-    public void setFilename(String filename) {
-        this.filename = filename;
     }
 
     public String getMimeType() {
         return mimeType;
     }
 
-    public void setMimeType(String mimeType) {
-        this.mimeType = mimeType;
-    }
-
     public String getFileContent() {
         return fileContent;
     }
 
-    public void setFileContent(String fileContent) {
-        this.fileContent = fileContent;
-    }
-
     public AttachmentType getAttachmentType() {
         return attachmentType;
-    }
-
-    public void setAttachmentType(AttachmentType attachmentType) {
-        this.attachmentType = attachmentType;
     }
 
 }

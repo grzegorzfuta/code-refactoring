@@ -1,7 +1,5 @@
 package com.example01;
 
-import com.sun.xml.internal.org.jvnet.mimepull.MIMEConfig;
-
 import java.util.Optional;
 
 public class DocumentComponent {
@@ -20,11 +18,10 @@ public class DocumentComponent {
 
         if (!inputElement.getFiles().isEmpty()) {
             File file = inputElement.getFiles().get(0);
-            Attachment attachment = new Attachment();
-            attachment.setFilename(file.getName());
-            attachment.setMimeType(getMimeType(file.getType()));
-            attachment.setFileContent(file.getContent());
-            attachment.setAttachmentType(attachmentType);
+            Attachment attachment = new Attachment(file.getName(),
+                    getMimeType(file.getType()),
+                    file.getContent(),
+                    attachmentType);
             return Optional.of(attachment);
         }
         return Optional.empty();

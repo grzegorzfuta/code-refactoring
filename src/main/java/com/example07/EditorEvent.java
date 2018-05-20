@@ -5,7 +5,7 @@ import lombok.Data;
 @Data
 public class EditorEvent {
 
-    private EditorObject source;
-    private EditorObject destination;
+    private final EditorObject source;
+    private final EditorObject destination;
 
 }

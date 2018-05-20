@@ -5,6 +5,7 @@ import org.junit.jupiter.api.Test;
 
 import java.util.Arrays;
 import java.util.List;
+import java.util.Optional;
 
 import static org.junit.jupiter.api.Assertions.*;
 
@@ -46,18 +47,19 @@ class DocumentComponentTest {
     void shouldNotCreateAttachmentForEmptyFileList() {
         Event event = createEventWithoutFiles();
 
-        Attachment attachment = documentComponent.createAttachment(event);
+        Optional<Attachment> optionalAttachment = documentComponent.createAttachment(event);
 
-        assertNull(attachment);
+        assertFalse(optionalAttachment.isPresent());
     }
 
     @Test
     void shouldCreateAttachment() {
         Event event = createEventWithFiles();
 
-        Attachment attachment = documentComponent.createAttachment(event);
+        Optional<Attachment> optionalAttachment = documentComponent.createAttachment(event);
 
-        assertNotNull(attachment);
+        assertTrue(optionalAttachment.isPresent());
+        Attachment attachment = optionalAttachment.get();
         assertEquals(FILE_NAME, attachment.getFilename());
         assertEquals(MIME_TYPE, attachment.getMimeType());
         assertEquals(FILE_CONTENT, attachment.getFileContent());
@@ -68,7 +70,10 @@ class DocumentComponentTest {
     void shouldCreateAttachmentWithType() {
         Event event = createEventWithFiles();
 
-        Attachment attachment = documentComponent.createAttachment(event, ATTACHMENT_TYPE);
+        Optional<Attachment> optionalAttachment = documentComponent.createAttachment(event, ATTACHMENT_TYPE);
+
+        assertTrue(optionalAttachment.isPresent());
+        Attachment attachment = optionalAttachment.get();
 
         assertNotNull(attachment);
         assertEquals(FILE_NAME, attachment.getFilename());

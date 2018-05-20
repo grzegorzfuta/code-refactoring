@@ -1,14 +1,16 @@
 package com.example01;
 
+import java.util.Optional;
+
 public class DocumentComponent {
 
     private Document document;
 
-    public Attachment createAttachment(Event event) {
+    public Optional<Attachment> createAttachment(Event event) {
         return createAttachment(event, null);
     }
 
-    public Attachment createAttachment(Event event, AttachmentType attachmentType) {
+    public Optional<Attachment> createAttachment(Event event, AttachmentType attachmentType) {
         InputElement inputElement = event.getInputElement();
 
         if (!inputElement.getFiles().isEmpty()) {
@@ -18,9 +20,9 @@ public class DocumentComponent {
             attachment.setMimeType(file.getType());
             attachment.setFileContent(file.getContent());
             attachment.setAttachmentType(attachmentType);
-            return attachment;
+            return Optional.of(attachment);
         }
-        return null;
+        return Optional.empty();
     }
 
 }

@@ -29,7 +29,7 @@ class EditorTest {
 
     @Test
     void shouldSetModificationMode() {
-        editor.setModificationMode();
+        editor.setModifyMode();
 
         assertFalse(editor.isDrawMode());
         assertTrue(editor.isModifyMode());

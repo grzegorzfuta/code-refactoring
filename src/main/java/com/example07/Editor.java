@@ -1,100 +1,75 @@
 package com.example07;
 
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
+import java.util.function.Consumer;
 
 public class Editor {
 
-    private boolean drawMode;
-    private boolean modifyMode;
-    private boolean addMode;
-    private boolean deleteMode;
-    private boolean joinMode;
-    private boolean cutMode;
-
+    private EditorMode editorMode;
+    private Map<EditorMode, Consumer<EditorEvent>> actions;
     private List<EditorEvent> eventHistory;
 
     public Editor() {
-        drawMode = true;
+        editorMode = EditorMode.DRAW_MODE;
         eventHistory = new ArrayList<>();
+        actions = new HashMap<>();
+        actions.put(EditorMode.DRAW_MODE, new ActionDraw());
+        actions.put(EditorMode.MODIFY_MODE, new ActionModify());
+        actions.put(EditorMode.ADD_MODE, new ActionAdd());
+        actions.put(EditorMode.DELETE_MODE, new ActionDelete());
+        actions.put(EditorMode.JOIN_MODE, new ActionJoin());
+        actions.put(EditorMode.CUT_MODE, new ActionCut());
     }
 
     public boolean isDrawMode() {
-        return drawMode;
+        return editorMode.equals(EditorMode.DRAW_MODE);
     }
 
     public void setDrawMode() {
-        drawMode = true;
-        modifyMode = false;
-        addMode = false;
-        deleteMode = false;
-        joinMode = false;
-        cutMode = false;
+        editorMode = EditorMode.DRAW_MODE;
     }
 
     public boolean isModifyMode() {
-        return modifyMode;
+        return editorMode.equals(EditorMode.MODIFY_MODE);
     }
 
-    public void setModificationMode() {
-        drawMode = false;
-        modifyMode = true;
-        addMode = false;
-        deleteMode = false;
-        joinMode = false;
-        cutMode = false;
+    public void setModifyMode() {
+        editorMode = EditorMode.MODIFY_MODE;
     }
 
     public boolean isAddMode() {
-        return addMode;
+        return editorMode.equals(EditorMode.ADD_MODE);
     }
 
     public void setAddMode() {
-        drawMode = false;
-        modifyMode = false;
-        addMode = true;
-        deleteMode = false;
-        joinMode = false;
-        cutMode = false;
+        editorMode = EditorMode.ADD_MODE;
     }
 
     public boolean isDeleteMode() {
-        return deleteMode;
+        return editorMode.equals(EditorMode.DELETE_MODE);
     }
 
     public void setDeleteMode() {
-        drawMode = false;
-        modifyMode = false;
-        addMode = false;
-        deleteMode = true;
-        joinMode = false;
-        cutMode = false;
+        editorMode = EditorMode.DELETE_MODE;
     }
 
     public boolean isJoinMode() {
-        return joinMode;
+        return editorMode.equals(EditorMode.JOIN_MODE);
     }
 
     public void setJoinMode() {
-        drawMode = false;
-        modifyMode = false;
-        addMode = false;
-        deleteMode = false;
-        joinMode = true;
-        cutMode = false;
+        editorMode = EditorMode.JOIN_MODE;
     }
 
     public boolean isCutMode() {
-        return cutMode;
+        return editorMode.equals(EditorMode.CUT_MODE);
     }
 
     public void setCutMode() {
-        drawMode = false;
-        modifyMode = false;
-        addMode = false;
-        deleteMode = false;
-        joinMode = false;
-        cutMode = true;
+        editorMode = EditorMode.CUT_MODE;
     }
 
     public List<EditorEvent> getEventHistory() {
@@ -103,42 +78,8 @@ public class Editor {
 
     public void action(EditorEvent editorEvent) {
         eventHistory.add(editorEvent);
-        if (drawMode) {
-            actionDraw(editorEvent);
-        } else if (modifyMode) {
-            actionModify(editorEvent);
-        } else if (addMode) {
-            actionAdd(editorEvent);
-        } else if (deleteMode) {
-            actionDelete(editorEvent);
-        } else if (joinMode) {
-            actionJoin(editorEvent);
-        } else if (cutMode) {
-            actionCut(editorEvent);
-        }
+
+        actions.get(editorMode).accept(editorEvent);
     }
 
-    private void actionCut(EditorEvent editorEvent) {
-        //perform cut action on objects from event
-    }
-
-    private void actionJoin(EditorEvent editorEvent) {
-        //perform join action on objects from event
-    }
-
-    private void actionDelete(EditorEvent editorEvent) {
-        //perform delete action on objects from event
-    }
-
-    private void actionAdd(EditorEvent editorEvent) {
-        //perform add action on objects from event
-    }
-
-    private void actionModify(EditorEvent editorEvent) {
-        //perform modify action on objects from event
-    }
-
-    private void actionDraw(EditorEvent editorEvent) {
-        //perform draw action on objects from event
-    }
 }
